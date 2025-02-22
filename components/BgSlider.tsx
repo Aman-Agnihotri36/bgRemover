@@ -6,6 +6,7 @@ function BgSlider() {
 
     const [sliderPosition, setSliderPosition] = useState(40)
 
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
     const handleSliderChange = (e: any) => {
         setSliderPosition(e.target.value)
     }
