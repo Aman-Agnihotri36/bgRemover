@@ -82,6 +82,11 @@ export async function POST(req: Request) {
         }
     }
 
+    if (eventType === 'user.updated') {
+        console.log('you are done')
+    }
+
+
     return new Response('Webhook received', { status: 200 })
 }
 

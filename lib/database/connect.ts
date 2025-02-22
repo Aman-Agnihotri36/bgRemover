@@ -21,7 +21,7 @@ export const MongoDbConnect = async () => {
 
     try {
         await mongoose.connect(Mongouri, {
-            dbName: 'Evently',
+            dbName: 'imagnify',
 
         })
 
