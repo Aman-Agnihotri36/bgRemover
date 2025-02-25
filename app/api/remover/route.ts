@@ -71,7 +71,7 @@ export async function POST(req: Request) {
                 return await response.arrayBuffer();
 
             } else {
-                throw new Error(`${response.status}: ${response}`);
+                throw new Error(`${response.status}: ${response.text()}`);
             }
         }
 
