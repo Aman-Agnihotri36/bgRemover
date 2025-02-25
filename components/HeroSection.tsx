@@ -100,7 +100,7 @@ function HeroSection() {
     return (
         <div className='flex items-center justify-between max-sm:flex-col-reverse gap-y-10 px-4 mt-10 lg:px-44 sm:mt-20'>
             <div >
-                <h1 className='text-4xl xl:text-5xl 2xl:text-6xl font-bold text-neutral-700 leading-tight'>Remove the <br className='max-md:hidden' /> <span className='bg-gradient-to-r from-violet-600 to-fuchsia-500 bg-clip-text text-transparent'>background</span> from <br className='max-md:hidden' /> images for free.</h1>
+                <h1 className='text-4xl xl:text-5xl 2xl:text-6xl font-bold text-neutral-700 leading-tight'>Remove the <br className='max-md:hidden' /> <span className='sm:bg-gradient-to-r text-pink-500 sm:from-violet-600 sm:to-fuchsia-500 sm:bg-clip-text sm:text-transparent'>background</span> from <br className='max-md:hidden' /> images for free.</h1>
                 <p className='my-6 text-[15px] text-gray-500'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus qui veniam voluptatum <br /> quod consequuntur error, facilis dolorem deleniti possimus reprehenderit ipsum.</p>
 
                 <div >

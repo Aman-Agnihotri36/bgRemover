@@ -4,7 +4,7 @@ import React from 'react'
 function Testimonials() {
     return (
         <div>
-            <h1 className='text-center text-2xl md:text-3xl lg:text-4xl mt-4 font-semibold bg-gradient-to-r from-gray-900 to-gray-400 bg-clip-text text-transparent'>Customer Testimonials</h1>
+            <h1 className='text-center text-2xl md:text-3xl lg:text-4xl mt-4 font-semibold sm:bg-gradient-to-r sm:from-gray-900 sm:to-gray-400 sm:bg-clip-text text-gray-500 sm:text-transparent'>Customer Testimonials</h1>
 
             <div className='grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto px-4 py-8'>
                 {/* eslint-disable-next-line  @typescript-eslint/no-explicit-any */}
