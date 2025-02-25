@@ -18,7 +18,9 @@ async function Navbar() {
     // console.log('SEE THIS', item)
     return (
         <div className='flex items-center justify-between mx-4 py-3 lg:mx-44'>
-            <Image width={165} height={165} src='/assets/logo.svg' alt='logo' />
+            <Image width={165} height={165} src='/assets/logo.svg' alt='logo' className='hidden md:block' />
+            <Image width={158} height={158} src='/assets/logo.svg' alt='logo' className='md:hidden' />
+
             <div className='flex items-center gap-5'>
                 <SignedIn>
                     <div className='flex relative left-4 items-center gap-2 sm:gap-3'>
