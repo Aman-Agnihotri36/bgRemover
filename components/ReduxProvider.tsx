@@ -9,7 +9,7 @@ interface ReduxProviderProps {
     children: React.ReactNode;
 }
 const store = makeStore();
-let persistor = persistStore(store)
+const persistor = persistStore(store)
 
 
 export const ReduxProvider = ({ children }: ReduxProviderProps) => {

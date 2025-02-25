@@ -46,7 +46,7 @@ export async function POST(req: Request) {
         try {
             await MongoDbConnect()
 
-            const UserDetail = await User.updateOne({ clerkId: user?.id }, { $set: { creditBalance: currentCredit?.result?.creditBalance! + creditNo! } })
+            const UserDetail = await User.updateOne({ clerkId: user?.id }, { $set: { creditBalance: currentCredit?.result?.creditBalance + creditNo } })
 
             if (UserDetail) {
                 return UserDetail
