@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import { useUser, RedirectToSignIn } from '@clerk/nextjs';
+import { useUser } from '@clerk/nextjs';
 import { Label } from './ui/label'
 import { Input } from './ui/input'
 import Image from 'next/image'
