@@ -1,7 +1,15 @@
 import ByCredit from '@/components/ByCredit'
-import React from 'react'
+import { auth } from "@clerk/nextjs/server";
+import { RedirectToSignIn } from "@clerk/nextjs";
 
-function Credit() {
+async function Credit() {
+    const { userId } = await auth();
+
+    if (!userId) {
+        return <RedirectToSignIn />;
+    }
+
+
     return (
 
         <ByCredit />

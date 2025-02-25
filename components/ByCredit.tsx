@@ -1,13 +1,15 @@
 import { plans } from '@/lib/assets'
 import Image from 'next/image'
 import React from 'react'
+import CheckOut from './CheckOut'
 
 function ByCredit() {
 
 
     type prop = {
         id: string,
-        price: number,
+        // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+        price: any,
         credits: number,
         desc: string
     }
@@ -22,9 +24,9 @@ function ByCredit() {
                         <p className='mt-3 font-semibold'>{item.id}</p>
                         <p className='text-sm '>{item.desc}</p>
                         <p className='mt-6'>
-                            <span className='text-3xl font-medium'>{item.price}</span> {item.credits}credits
+                            <span className='text-3xl font-medium'>{item.price}</span>/ {item.credits}credits
                         </p>
-                        <button className='w-full bg-gray-800  text-white mt-8 text-sm rounded-md py-2.5 min-w-52'>Purchase</button>
+                        <CheckOut credits={item.credits} price={item.price} />
                     </div>
                 ))
                 }
