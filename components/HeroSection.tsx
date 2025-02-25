@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import { useUser, RedirectToSignIn } from '@clerk/nextjs';
 import { Label } from './ui/label'
 import { Input } from './ui/input'
 import Image from 'next/image'
@@ -11,6 +12,7 @@ import { fileToBase64 } from '@/lib/assets'
 
 function HeroSection() {
 
+    const { isSignedIn } = useUser();
     const credit = useAppSelector((state) => state.url.credit)
     const [Loader, setLoader] = useState(false)
     const [Credit, setCredit] = useState(credit)
@@ -19,7 +21,14 @@ function HeroSection() {
     const router = useRouter()
 
     // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+    const handleClick = (e: any) => {
+        e.preventDefault();
+        router.push('/sign-in')
+    }
+
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
     const handleInput = async (e: any) => {
+
         if (Credit !== 0) {
             setLoader(true)
         }
@@ -95,11 +104,19 @@ function HeroSection() {
                 <p className='my-6 text-[15px] text-gray-500'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus qui veniam voluptatum <br /> quod consequuntur error, facilis dolorem deleniti possimus reprehenderit ipsum.</p>
 
                 <div >
-                    <Label htmlFor="picture" className='inline-flex gap-3 px-8 py-3.5 rounded-full cursor-pointer bg-gradient-to-r from-violet-600 to-fuchsia-500 m-auto hover:scale-105 transition-all duration-700'>
+                    {isSignedIn ? (<div >  <Label htmlFor="picture" className='inline-flex gap-3 px-8 py-3.5 rounded-full cursor-pointer bg-gradient-to-r from-violet-600 to-fuchsia-500 m-auto hover:scale-105 transition-all duration-700'>
                         <Image src='assets/upload_btn_icon.svg' alt='upload' width={15} height={15} />
-                        {!Loader ? <p className='text-white text-sm'>Upload Image</p> : (<p className='text-white text-sm'>Uploading...</p>)}
+                        {
+                            !Loader ? <p className='text-white text-sm'>Upload Image</p> : (<p className='text-white text-sm'>Uploading...</p>)
+                        }
                     </Label>
-                    <Input onChange={handleInput} id="picture" type="file" accept='image/*' className='hidden' />
+                        <Input onChange={handleInput} id="picture" type="file" accept='image/*' className='hidden' /> </div>) : (<div onClick={handleClick}> <Label htmlFor="picture" className='inline-flex gap-3 px-8 py-3.5 rounded-full cursor-pointer bg-gradient-to-r from-violet-600 to-fuchsia-500 m-auto hover:scale-105 transition-all duration-700'>
+                            <Image src='assets/upload_btn_icon.svg' alt='upload' width={15} height={15} />
+                            {
+                                !Loader ? <p className='text-white text-sm'>Upload Image</p> : (<p className='text-white text-sm'>Uploading...</p>)
+                            }
+                        </Label>
+                            <Input onChange={handleInput} id="picture" type="file" accept='image/*' className='hidden' /></div>)}
                 </div>
             </div>
             <div className='w-full max-w-md'>
