@@ -24,6 +24,9 @@ async function Navbar() {
             <div className='flex items-center gap-5'>
                 <SignedIn>
                     <div className='flex relative left-4 items-center gap-2 sm:gap-3'>
+                        <Link href='/credit'>
+                            <Button variant='ghost'>View Plans</Button>
+                        </Link>
                         <Credit />
                         <p className='text-gray-600 max-sm:hidden'>Hi, {fullName}</p>
                     </div>
